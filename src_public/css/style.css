@@ -1,0 +1,715 @@
+/* Seletores: Universal = *, id = #, Class = . */ 
+/* id nao pode ser duplicado*/
+
+*{
+    font-size: 25px;
+}
+
+p{
+    margin: 2em auto;
+    text-align: justify;
+}
+header{
+    margin: 23px;
+    text-align: 30px;
+}
+
+body{
+    background-color: rgb( 94, 41, 19);
+}
+
+#bloco h2{
+font-size: 5em;
+color: rgb(2, 165, 78);
+font-family: Arial, Helvetica, sans-serif;
+text-shadow: -4px -10px 10px rgb(94, 41, 19);
+display: inline;
+position: relative;
+right: -3em;
+margin-top: 4em;
+}
+
+nav ul{
+position: fixed;
+top: 326px;
+left: -100%;
+width: 20px;
+text-align: center;
+display: block;
+z-index: 400;
+}
+
+
+nav ul.open{
+  left: 445px;
+}
+
+nav ul li{
+  font-size: 21px;
+  width: 130px;
+}
+
+.icon{
+    width: 160px;
+    background-repeat: no-repeat;
+    background-position: 50px 30px;
+    background-attachment:local;
+    position: relative;
+    display:inline-block;
+}
+
+#bloco{
+    width: 1902px;
+    padding: 20px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 10px 12px 10px rgb(40, 21, 11);
+    border-radius: 20px;
+    position: relative;
+    right: -15px;
+    margin-top: 5px;
+
+}
+
+#bloco li{
+    background: rgb(49, 12, 12);
+    border: 1px solid rgb(44, 9, 9);
+    border-radius: 10px;
+    padding: 30px;
+    display: inline-flex;
+    text-indent: 20px;
+    right: -300px; 
+    position: relative;
+}
+
+.log{
+    width: 1em;
+    color: white;
+    left: 58em;
+    position: relative;
+    margin-top: -7em;
+}
+
+#password{
+  left: -20px;
+  position: relative;
+}
+
+
+#confirm_password{
+  left: 0px;
+  position: relative;
+}
+
+
+.confirmar{
+    border-radius: 10px;
+  width: 180px
+}
+
+img{
+    width: 1827px;
+}
+
+li a:link{
+    color: rgb(248, 248, 248);
+    }
+    
+li  a:visited{
+    color: white;
+    }
+
+  
+
+.container{
+    width: 1820px;
+    height: 560px;
+    padding: 30px;
+    border: 2px solid #ffffff;
+    background-color: wheat;
+    border-radius: 20px;
+    margin: 30px;
+    box-sizing: border-box;
+    top: 100px;
+    left: 10px;
+    margin-top: -1em;
+    bottom: 0;
+    right: 0;
+    position: relative;
+   /* overflow: auto; /*se transbordar"*/
+}
+
+.container1{
+    width: 1827px;
+    height: 450px;
+    padding: 30px;
+    border: 2px solid #ffffff;
+    margin: 30px;
+    box-sizing: border-box;
+    top: 100px;
+    left: 10px;
+    bottom: 0;
+    right: 0;
+    position: relative;
+    border-radius: 20px;
+    background-color: wheat;
+   /* overflow: auto; /*se transbordar"*/
+}
+
+.container2{
+    width: 91em;
+    height: 620px;
+    padding: 30px;
+    border: 2px solid #ffffff;
+    margin: 30px;
+    box-sizing: border-box;
+    top: 100px;
+    left: 10px;
+    bottom: 0;
+    right: 0;
+    position: relative;
+    border-radius: 20px;
+    background-color: wheat;
+   /* overflow: auto; /*se transbordar"*/
+}
+
+.container3{
+    width: 91em;
+    height: 950px;
+    padding: 30px;
+    border: 2px solid #FF0000;
+    margin: 30px;
+    box-sizing: border-box;
+    top: 100px;
+    left: 10px;
+    bottom: 0;
+    right: 0;
+    position: relative;
+    border-radius: 20px;
+    background-color: wheat;
+   /* overflow: auto; /*se transbordar"*/
+}
+
+div{
+   /* background-image: url(image/download.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: cover;
+    background-attachment: fixed;*/
+    /* Simplificando: background: url(image/download.png) no-repeat 50% 30px;*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: lighter; /*bold, bolder*/
+    font-style: italic;
+    font-variant: normal; /*small-caps: tudo em maiusculo" */
+    /*Simplificando: font: bold italic small-caps 20px/60px Arial, Helvetica, sans-serif;*/
+    line-height: 30px; /*Tamanho da linha */
+    text-align: left;
+    text-transform: none;
+    text-decoration: none;
+    text-indent: 20px; /* adicionar o texto 20px a direita*/
+
+}
+section{
+	margin:50px auto;
+	width:1025px;
+	height:150px;
+}
+
+.rede{
+    margin: 2em;
+	width: 150px;
+	height: 150px;
+	float:left;
+	margin-left: 20px;
+	transition: all .4s ease-out;
+	border-radius: 50%;
+    right: 300px; 
+    position: relative;
+}
+
+.rede:hover{
+	cursor: pointer;
+	box-shadow: 4px 30px 16px 0px rgba(50, 50, 50, 0.45);
+	transform: translateY(-20px);
+}
+
+.rede#facebook{
+	background-color: #2372a3;
+}
+
+.rede#whatsapp{
+	background-color: #0084b4;
+}
+
+.rede#insta{
+	background-color: #3f729b;
+}
+
+
+img.icone{
+	margin:15px auto;
+	padding: 28px;
+	width: 60px;
+}
+
+.dogs{
+    width: 150px;
+    display: inline-block;
+}
+
+.dogs2{
+    width: 150px;
+    size: 20px;
+}
+
+.men{
+    border: 0;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: rgb(124, 124, 173);
+}
+
+label{
+    margin: 0 px 0 0;
+    font-size: 26px;
+    line-height: 70px;
+    display: none;
+}
+
+#toggle {
+    display: none;
+}
+
+ #assc:checked + .menu{
+        display: block;
+    }
+
+#stark1{
+  width: 200px;
+}
+
+#stark2{
+  width: 200px;
+}
+
+/*Pseudoclasses
+a:link{
+color: aquamarine;
+}
+
+a:visited{
+color: red ;
+}
+
+
+a:hover{
+    color: violet;
+}
+
+a:active{
+    color: black;
+}
+
+a:focus{
+    color: yellow;
+}
+*/
+@media only screen and (min-width: 1201px) and (max-width: 1400px){
+  
+  #bloco{
+        width: 1180px;
+        background-size: 150px;
+        padding: 20px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 20px;
+        position: relative;
+        right: -15px;
+        margin-top: 5px;
+    }
+
+  .log{
+    width: 30px;
+    color: white;
+    left: 38em;
+    position: relative;
+    margin-top: -6em;
+}
+
+  .menu{
+    width: 30px;
+       display: inline-flex;
+    text-indent: 10px;
+    right: -100px; 
+    position: relative;
+     border-radius: 2px;
+    padding: 10px;
+  }
+
+   #password{
+     width: 180px;
+    color: white;
+    left: -20px;
+    position: relative;
+    margin-top: -6em;
+   }
+  
+   #confirm_password{
+     width: 180px;
+    color: white;
+    left: 0px;
+    position: relative;
+    margin-top: -6em;
+   }
+
+.confirmar{
+    border-radius: 10px;
+    width: 130px;
+}
+
+
+    #bloco li{
+      background: rgb(49, 12, 12);
+    border: 1px solid rgb(44, 9, 9);
+    border-radius: 10px;
+    padding: 30px;
+    display: inline-flex;
+    text-indent: 20px;
+    right: -100px; 
+    position: relative;
+    }
+
+    #bloco h2{
+    font-size: 4em;
+    color: rgb(2, 165, 78);
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: -4px -10px 10px rgb(61, 29, 29);
+    display: inline-block;
+    position: relative;
+    right: -3em;
+    margin-top: 60px;
+    }
+
+    .container{
+        width: 1180px;
+    }
+
+    .container1{
+        width: 1180px;
+    }
+
+    .rede{
+     margin: 1em;
+	width: 150px;
+	height: 150px;
+	float:left;
+	margin-left: 20px;
+	transition: all .4s ease-out;
+	border-radius: 50%;
+    right: -10px; 
+    position: relative;
+    }
+
+}
+
+@media only screen and (min-width: 930px) and (max-width: 1200px){
+    #bloco{
+        width: 1128px;
+        background-size: 100px;
+        padding: 10px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 20px;
+        position: relative;
+        right: -15px;
+        margin-top: 5px;
+    }
+
+  .log{
+    width: 100px;
+    color: white;
+    left: 35em;
+    position: relative;
+    margin-top: -6em;
+}
+
+   #password{
+    width: 180px;
+    color: white;
+    left: -10px;
+    position: relative;
+    right: 200px;
+    margin-top: -7em;
+   }
+  
+   #confirm_password{
+    width: 180px;
+    color: white;
+    left: 10px;
+    position: relative;
+    right: -1em;
+    margin-top: -7;
+   }
+
+  .confirmar{
+    width: 160px;
+  }
+
+  .menu{
+    width: 1px;
+    display: inline-flex;
+    text-indent: 10px;
+    right: -100px; 
+    position: relative;
+     border-radius: 2px;
+    padding: 10px;
+  }
+
+
+
+    #bloco li{
+        background: rgb(49, 12, 12);
+        border: 1px solid rgb(44, 9, 9);
+        border-radius: 10px;
+        padding: 25px;
+        display: inline-block;
+        text-indent: 20px;
+        right: 2px; 
+        position: relative;
+    }
+
+    #bloco h2{
+        font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    position: relative;
+    right: -4em;
+    margin-top: 60px;
+    }
+
+    .container{
+        width: 1112px;
+    }
+
+    .container1{
+        width: 1112px;
+    }
+
+    .rede{
+     margin: 1em;
+	width: 150px;
+	height: 150px;
+	float:left;
+	margin-left: 20px;
+	transition: all .4s ease-out;
+	border-radius: 50%;
+    right: -10px; 
+    position: relative;
+    }
+
+}
+
+@media only screen and (min-width: 650px) and (max-width: 929px){
+    #bloco{
+        width: 1070px;
+        background-size: 100px;
+        padding: 10px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 20px;
+        position: relative;
+        right: -15px;
+        margin-top: 5px;
+    }
+
+    .log{
+    width: 70px;
+    color: white;
+    left: 34em;
+    position: relative;
+    margin-top: -6em;
+}
+  
+   #password{
+    width: 149px;
+    color: white;
+    left: -9px;
+    position: relative;
+    right: 1em;
+    margin-top: -7em;
+   }
+  
+   #confirm_password{
+    width: 149px;
+    color: white;
+    left: 10px;
+    position: relative;
+    right: -1em;
+    margin-top: -7;
+   }
+
+  .confirmar{
+    width: 130px;
+  }
+
+  .menu{
+    width: 1px;
+    display: inline-flex;
+    text-indent: 10px;
+    right: -100px; 
+    position: relative;
+     border-radius: 2px;
+    padding: 10px;
+  }
+
+
+
+    #bloco li{
+        background: rgb(49, 12, 12);
+        border: 1px solid rgb(44, 9, 9);
+        border-radius: 10px;
+        padding: 25px;
+        display: inline-block;
+        text-indent: 20px;
+        right: 2px; 
+        position: relative;
+    }
+
+    #bloco h2{
+        font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    position: relative;
+    right: -4em;
+    margin-top: 60px;
+    }
+
+    .container{
+        width: 1031px;
+    }
+
+    .container1{
+        width: 1031px;
+    }
+
+    .rede{
+     margin: 1em;
+	width: 150px;
+	height: 150px;
+	float:left;
+	margin-left: 20px;
+	transition: all .4s ease-out;
+	border-radius: 50%;
+    right: -10px; 
+    position: relative;
+    }
+
+}
+
+@media only screen and (min-width: 10px) and (max-width: 649px){
+
+ 
+  
+    #bloco{
+        width: 1030px;
+        background-size: 80px;
+        padding: 10px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 20px;
+        position: relative;
+        right: -15px;
+        margin-top: 5px;
+    }
+
+label{
+        display: inline-block;
+        position: relative;
+        margin-top: -106px;
+        cursor: pointer;
+        float: right;
+        right: 40px;
+    }
+
+    .log{
+        display: none;
+    }
+
+    .menu a{
+        display: block;
+        border-bottom: 1px solid #e0c1c1;
+        margin: 0;
+    }
+
+    #toggle:checked + .menu{
+        display: block;
+    }
+
+   #login{
+    width: 89px;
+    color: white;
+    left: -10px;
+    position: relative;
+    right: 200px;
+    margin-top: -7em;
+   }
+  
+   #password{
+    width: 89px;
+    color: white;
+    left: 10px;
+    position: relative;
+    right: -1em;
+    margin-top: -7;
+   }
+
+  .menu{
+    width: 1px;
+    display: inline-flex;
+    text-indent: 10px;
+    right: -100px; 
+    position: relative;
+     border-radius: 2px;
+    padding: 10px;
+    display: none;
+  }
+
+
+
+    #bloco li{
+        background: rgb(49, 12, 12);
+        border: 1px solid rgb(44, 9, 9);
+        border-radius: 10px;
+        padding: 25px;
+        display: inline-block;
+        text-indent: 20px;
+        right: 2px; 
+        position: relative;
+    }
+
+    #bloco h2{
+        font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    position: relative;
+    right: -5em;
+    margin-top: 60px;
+    }
+
+    .container{
+        width: 1031px;
+    }
+
+    .container1{
+        width: 1031px;
+    }
+
+    .rede{
+     margin: 1em;
+	width: 150px;
+	height: 150px;
+	float:left;
+	margin-left: 20px;
+	transition: all .4s ease-out;
+	border-radius: 50%;
+    right: -10px; 
+    position: relative;
+    }
+
+}
