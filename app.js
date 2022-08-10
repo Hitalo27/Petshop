@@ -8,6 +8,10 @@ var hbs = handlebars.create({
     /* configuração */
   });
 
+
+  const port = 8081;
+
+
 // Config
     //Template Engine
     app.engine("handlebars", hbs.engine);
@@ -149,7 +153,7 @@ app.post("/logOut", function (req, res) {
 })
 
 
-app.listen(8081, function(){
+app.listen(port, function(){
     console.log("Servidor Rodando na url http://localhost:8081");
 });
 //localhost:8081 
