@@ -1,0 +1,113 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Alfred</title>
+</head>
+
+<body>
+
+    <div id="bloco">
+
+    <img class="icon" src="image/imagem.jpg">
+
+    <h2>Cuidar Pet Shop</h2>
+
+  </div>
+
+    <div class="container">
+
+        <div class="container-interno">
+
+            <h2><b>Menu de Cliente</b></h2>
+            <div class="boasVindas">
+                <h2>Bem-vindo: {{dados.dataValues.p_nome}} {{dados.dataValues.sobre_nome}} </h2>
+            </div>
+            <p></p>
+
+            <div class="blocks-2">
+                <div class="processos">
+                    <form action="/cadastrar-pet" method="post"><button class="primary-button"><i
+                                class="fa fa-user"></i> Cadastrar meu pet para banho e tosa</button></form>
+                </div>
+                <div class="processos">
+                    <form action="/meus-pets" method="post"><button class="primary-button"><i class="fa fa-user"></i>
+                            Meus pets cadastrados</button></form>
+                </div>
+            </div>
+
+
+
+
+            <div class="blocks-2">
+                <div class="processos">
+                    <form action="/meus-eventos" method="post"><button type="submit" class="primary-button"><i
+                                class="fa fa-file"></i> Acessorios </button></form>
+                </div>
+
+                <div class="processos">
+
+                    <form action="meus-contratos-cliente" method="post"><button class="primary-button"><i
+                                class="fa fa-file"></i> Serviços que ja contratei</button></form>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="blocks-2">
+                <div class="processos">
+                    
+                        <form action="/pagamento" method="post"><button class="primary-button"><i class="fa fa-credit-card"></i> Pagamentos</button></form>
+                    
+                </div>
+
+
+            <div class="blocks-2">
+
+                <div class="processos">
+                    <form action="/avaliar" method="post">
+                        <button class="primary-button"><i class="fa fa-bell"></i> Avaliação</button>
+                    </form>
+                </div>
+
+                <div class="processos">
+                    <form action="/registrar-chamado" method="post"><button type="submit" class="primary-button"><i
+                                class="fa fa-question"></i> Suporte</button></form>
+                </div>
+
+            </div>
+
+            <div class="blocks-2">
+
+                <div class="processos">
+                    <form action="/meus-chamados" method="post"><button type="submit" class="primary-button"><i
+                                class="fa fa-comments"></i> Meus Chamados</button></form>
+                </div>
+
+
+                
+
+            </div>
+            <form action="/logOut" method="post"><button class="leave">Sair</button></form>
+        </div>
+
+    </div>
+
+
+
+</body>
+<script>
+
+
+
+</script>
+
+</html>

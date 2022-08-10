@@ -9,6 +9,7 @@
   <title>Cuidar Pet Shop</title>
   <link rel="stylesheet" href="css/style.css" />
   
+  
 </head>
 
 <body>
@@ -19,15 +20,19 @@
 
     <h2>Cuidar Pet Shop</h2>
 
-    <form class="log">
+    <form class="log" action="/loginHome" method="post" onsubmit="return (verificarForm())">
+      <select name="metodoEntrada">
+        <option value="Admin" selected>Administrador</option>
+        <option value="Cliente" selected>Cliente</option>
+    </select>
       <fieldset>
         <legend>Login</legend>
 
-        <input type="password" placeholder="Login" id="password" required>
-        <input type="password" placeholder="Senha" id="confirm_password" required>
+        <input name="dadosEntrada" name="" type="text" placeholder="CPF" id="password" required>
+        <input type="password" name="senha" placeholder="Senha" id="confirm_password" required>
 
-        <button type="submit" class="confirmar">Confirmar</button>
-        <a href="./CadastroCliente.html"><button type="button" class="confirmar">Cadastre-se</button></a>
+        <button class="join" type="submit">Entrar <i class="fa fa-arrow-right"></i></button>
+        <a href="./CadastroCliente.html"><button type="button" class="join">Cadastre-se</button></a>
       </fieldset>
     </form>
 
@@ -45,11 +50,10 @@
     <ol class="menu">
       <li><a href="#Home">Home</a></li>
       <li><a href="#Apr">Quem somos</a></li>
-      <li><a href="#" class="asc" onclick="menuShow()">Assessorios</a></li>
+      <li><a href="./pagina-acessorios.html">Assessorios</a></li>
       <li><a href=" #Fts">Galeria</a></li>
       <li><a href="#Contato">Entre em contato</a></li>
     </ol>
-
 
     <h1 id="Home"></h1>
 
@@ -84,7 +88,7 @@
 
     <header> Clique no botão para ver as fotos dos cachorrinhos que ja tomou banho com nosso cuidado.</header>
     <br>
-    <a href="./pagina-02.html">
+    <a href="./pagina-galeria.html">
       <button> Galeria</button>
     </a>
 
@@ -117,8 +121,35 @@
     </p>
   </div>
 
+  <script>
 
-  <script type="text/javascript" src="script.js"></script>
+    function verificarForm() {
+
+        var metodoEntrada = document.querySelector('[name="metodoEntrada"]').value
+        var dadosEntrada = document.querySelector('[name="dadosEntrada"]').value
+        var senha = document.querySelector('[name="senha"]').value
+        var check = true
+
+        if (metodoEntrada === "vazio") {
+            check = false
+            window.alert("Selecione um método de entrada")
+            document.querySelector('[name="metodoEntrada"]').style.borderColor = "red"
+        }
+        if (dadosEntrada == "") {
+            document.querySelector('[name="dadosEntrada"]').style.borderColor = "red"
+            check = false
+        }
+        if (senha == "") {
+            document.querySelector('[name="senha"]').style.borderColor = "red"
+            check = false
+        }
+
+
+        return check
+    }
+
+</script>
+
 </body>
 
 </html>

@@ -11,16 +11,16 @@
 
 <div class="container3">
 <form action="/sdd" method="post">
-    <p>Nome do Animal: </p>
-    <input type="text" name="name">
-    <p>Peso do animal: </p>
-    <input type="text" name="peso">
-    <p>Idade do animal: </p>
-    <input type="text" name="idade">
-    <p>Raça do animal: </p>
-    <input type="text" name="raca">
-    <br>
-    
-    <button type="submit"> Cadastrar</button>
+    <p>Nome do Pet:</p><input type="text" name="name" placeholder="Digite o nome do pet"
+  required>
+  <p>Peso do Pet:</p><input type="text" name="peso" placeholder="Digite o peso do pet" required>
+  <p>Idade do Pet:</p><input type="text" name="idade" placeholder="Apenas números" required="required" pattern="[0-9]+$">
+  <p>Raça do Pet:</p><input type="text" name="raca" placeholder="Digite a raça do seu pet" required>
+ <p> <button type="submit" class="join">Cadastrar <i class="fa fa-arrow-right"></i></button></p>
 </form>
+
+<form action="/menuCliente" method="post"><button class="leave">Voltar para menu</button></form>
 </div>
+
+
+

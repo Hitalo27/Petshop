@@ -121,8 +121,9 @@ li  a:visited{
   
 
 .container{
+    min-height: 500px;
+    max-height: 1920px;
     width: 1820px;
-    height: 560px;
     padding: 30px;
     border: 2px solid #ffffff;
     background-color: wheat;
@@ -175,6 +176,23 @@ li  a:visited{
 .container3{
     width: 91em;
     height: 950px;
+    padding: 30px;
+    border: 2px solid #FF0000;
+    margin: 30px;
+    box-sizing: border-box;
+    top: 100px;
+    left: 10px;
+    bottom: 0;
+    right: 0;
+    position: relative;
+    border-radius: 20px;
+    background-color: wheat;
+   /* overflow: auto; /*se transbordar"*/
+}
+
+.container4{
+    width: 91em;
+    height: 1150px;
     padding: 30px;
     border: 2px solid #FF0000;
     margin: 30px;

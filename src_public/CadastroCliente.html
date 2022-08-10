@@ -9,18 +9,57 @@
   </div>
 
 
-    <div class="container3">
-<form action="/add" method="post">
-    <p>Nome: </p>
-    <input type="text" name="name">
-    <p>Senha: </p>
-    <input type="password" name="senha">
-    <p>Email: </p>
-    <input type="text" name="email">
-    <p>Telefone: </p>
-    <input type="text" name="telefone">
-    <br>
-    
-    <button type="submit"> Cadastrar</button>
+    <div class="container4">
+<form action="/add" method="post" onsubmit="return (verificarForm())">
+  <p>Nome:</p><input type="text" name="pNome" id="pNomeCliente" placeholder="Digite o seu primeiro nome"
+  required>
+  <p>Sobrenome:</p><input type="text" name="sobreNome" placeholder="Digite o seu sobrenome" required>
+  <p>CPF:</p><input type="text" name="cpf" placeholder="Apenas números" required>
+  <p>E-mail:</p><input type="text" name="email" placeholder="Digite o seu e-mail" required>
+  <p>Telefone:</p><input type="text" name="telefone" placeholder="DDD + número" required>
+  <p>Senha:</p><input type="password" name="senha" placeholder="Informe uma senha" required>
+ <p> <button type="submit" class="join">Cadastrar <i class="fa fa-arrow-right"></i></button></p>
+ 
 </form>
+
 </div>
+
+<script>
+  function checkCPF() {
+      var cpf = document.querySelector('[name="cpf"]').value;
+      if (cpf.length != 11) {
+          document.querySelector('[name="cpf"]').style.borderColor = "red"
+          return false
+      }
+      return true
+  }
+
+  function checkEmail() {
+      var email = document.querySelector('[name="email"]').value;
+      if (email == "" || email.indexOf('@') == -1 || email.indexOf('.') == -1) {
+          document.querySelector('[name="email"]').style.borderColor = "red"
+          return false
+      }
+      return true
+  }
+
+
+  function verificarForm() {
+      var check = true;
+      if (!checkCPF()) {
+          window.alert("Preencha o CPF apenas com os 11 números")
+          check = false
+      };
+      if (!checkEmail()) {
+          window.alert("Preencha um email válido")
+          check = false
+      }
+
+      if (check){
+          window.alert("Cadastro realizado com sucesso!")
+      }
+      return check
+  }
+
+
+</script>

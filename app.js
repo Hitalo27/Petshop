@@ -24,52 +24,132 @@ var hbs = handlebars.create({
     app.use(express.json())
     //app.set('views', '/src_public')
 
+
+//SingUp
+let usuarioLogado = ""
+let petsCliente = ""
+
+
     // Rotas
+
+    //Rota para validar Login
+app.post("/loginHome", function (req, res) {
+  var metodoEntrada = req.body.metodoEntrada;
+  var senha = req.body.senha;
+  switch (metodoEntrada) {
+      case "Cliente":
+          User.findOne({ where: { cpf: req.body.dadosEntrada } }).then(function (dados) {
+              if (dados == null) {
+                  res.send("não foi possível fazer login")
+
+              } else if (senha != dados.senha) {
+                  res.send("senha incorreta")
+              } else {
+                  res.render("menu-cliente", { dados: dados })
+                  usuarioLogado = dados
+              }
+          }).catch(function (erro) {
+              res.send("houve um erro no login" + erro)
+          });
+          break;
+
+      case "Admin":
+          CadastrarCliente.findOne({ where: { cpf: req.body.dadosEntrada } }).then(function (dados) {
+              if (dados == null) {
+                  res.send("não foi possível fazer login")
+
+              } else if (senha != dados.senha) {
+                  res.send("senha incorreta")
+              } else if (senha == dados.senha & dados.isAdmin == 1) {
+                  res.render("menu-adm", { dados: dados })
+                  usuarioLogado = dados
+              } else {
+                  res.send("houve um erro no login" + erro)
+              }
+          }).catch(function (erro) {
+              res.send("houve um erro no login" + erro)
+          });
+          break;
+        }
+      })
 
     app.get("/", function (req, res) {
       res.sendFile('index.html', {root: __dirname});
   });
 
-  app.post('/petshop', function (req,res){
-    res.render('index')
-  })
+ 
+   //Rota cliente logado
+   app.post("/menuCliente", function (req, res) {
+    res.render("menu-cliente", { dados: usuarioLogado })
+})
 
-    app.get("/pet", function (req, res) {
+
+    app.post("/cadastrar-pet", function (req, res) {
         res.render("CadastroPet");
       });
 
-    app.get("/cad", function (req, res) {
-        res.render("CadastroCliente");
+      //Rota para SELECT dos pets do usuário
+app.post("/meus-pets", function (req, res) {
+    Pet.findAll({ where: { usuario_id_fk: usuarioLogado.id, } }).then(function(pets) {
+        res.render("meus-pets", { pets: pets, dados: usuarioLogado })
+        petsCliente = pets
+    })
+})
+
+      /*app.post("/meus-pets", function (req, res) {
+        res.render("meus-pets", { dados: usuarioLogado });
       });
+*/
+
+// Rota para SELECT * na tabela de paceiros cadastrados
+app.post("/contratar-servico", function (req, res) {
+    Pet.findAll({
+        
+    }
+    ).then(function (parceiros) {
+        res.render("contratar-servico", {
+            pets: petsCliente
+
+        })
+        //console.log(parceiros)
+        //console.log(usuarioLogado)
+        //console.log(eventosCliente)
+    })
+})
 
       app.post("/add", function (req, res){
         User.create({
-            nome: req.body.name,
-            senha: req.body.senha,
-            email: req.body.email,
-            telefone: req.body.telefone
+          CPF: req.body.cpf,
+          p_nome: req.body.pNome,
+          sobre_nome: req.body.sobreNome,
+          email: req.body.email,
+          telefone: req.body.telefone,
+          senha: req.body.senha,
         }).then(function(){
             res.redirect('/')
-        }).catch(function(){
-            res.send("Houve um erro " + erro)
-        })
+        });
       });
 
       app.post("/sdd", function (req, res){
         Pet.create({
-            nome_pet: req.body.name,
-            peso_pet: req.body.peso,
-            idade_pet: req.body.idade,
-            raça_pet: req.body.raca
+            nome: req.body.name,
+            peso: req.body.peso,
+            idade: req.body.idade,
+            raça: req.body.raca,
+            usuario_id_fk: usuarioLogado.id
         }).then(function(){
-            res.redirect('/')
-        }).catch(function(){
-            res.send("Houve um erro " + erro)
+            res.redirect(307, '/meus-pets')
         })
       });
+
+      //Rota apra Logout
+app.post("/logOut", function (req, res) {
+    usuarioLogado = ""
+    res.redirect("/")
+})
 
 
 app.listen(8081, function(){
     console.log("Servidor Rodando na url http://localhost:8081");
 });
-//localhost:8081
+//localhost:8081 

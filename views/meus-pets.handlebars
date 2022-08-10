@@ -1,0 +1,46 @@
+<!--Tela de Eventos-->
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Alfred - Meus eventos</title>
+</head>
+
+<body class="eventos">
+
+<div id="bloco">
+
+    <img class="icon" src="image/imagem.jpg">
+
+    <h2>Cuidar Pet Shop</h2>
+
+  </div>
+
+    <div class="container">
+        <h2>Pets cadastrados por: {{dados.dataValues.p_nome}} {{dados.dataValues.sobre_nome}} </h2>
+
+        <h4>Selecione o serviço para o pet que você deseja</h4>
+        <div class="boxEventosCadastrdos" style="overflow-y: scroll; max-height: 400px;">
+            {{#each pets}}
+          
+                <h3> <b>Nome do pet: </b> {{dataValues.nome}}</h3>
+               <form action="/detalhes" method="post"><button> + Detalhes</button></form>
+                <form action="/contratar-servico" method="post"><button>Banho e tosa</button></form>
+
+            
+             {{/each}}
+        </div>
+        <br>
+        <form action="/menuCliente" method="post"><button class="leave">Voltar para menu</button></form>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!--Tela de Eventos-->
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Alfred - Encontre o seu evento</title>
+</head>
+
+<body class="eventos">
+
+    <div class="container">
+     
+            <div class="container-interno select-evento">
+                <h2><b>Selecione o seu pet e o serviço que quer contratar</b></h2>
+                <select name="eventos">
+                    <option value="vazio" selected>Selecionar um pet</option>
+                    {{#each pets}}
+                    <option value="{{dataValues.id}}">{{dataValues.nome}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class="container-interno eventos-blocos blocks-2" style="overflow-y: scroll; max-height: 400px;">
+  
+    
+                    <p>Serviço: <button value="1,00">Banho</button> , <button>tosa</button> , <button>banho e tosa</button></p>
+                    <p> R${{dataValues.Servico.preco}} por {{dataValues.Servico.unidade_medida}}</p>
+                    <input type="checkbox" name="parceiro"  value="{{dataValues.id}}" checked hidden>
+                    <button class="join1">Contratar <i class="fa fa-arrow-right"></i></button>
+                
+   
+    </div>
+    <form action="/menuCliente" method="post"><button class="leave">Voltar para o menu inicial</button></form>
+    </div>
+
+
+
+
+</body>
+
+</html>
