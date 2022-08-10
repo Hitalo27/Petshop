@@ -9,7 +9,7 @@ var hbs = handlebars.create({
   });
 
 
-  const port = 8081;
+  const port = process.env.PORT || 8081;
 
 
 // Config
