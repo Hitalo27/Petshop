@@ -1,0 +1,52 @@
+<!--Tela de Solução dos Chamados-->
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Cuidar Pet Shop</title>
+    <style>
+        #msg {
+            width: 275px;
+            height: 60px;
+            resize: none;
+        }
+    </style>
+</head>
+
+
+
+<body class="chamados">
+
+    <body class="cliente">
+
+        <div class="container">
+            <h2>Registro de Soluçao</h2>
+            <div class="boxEventosCadastrdos" style="overflow-y: scroll; max-height: 400px;">
+               {{#each chamados}}
+                <form action="/atualizarChamado" method="post">    
+                    <div class="divEventosCadastrados">
+                        <h3> <b>ID:</b> <input type="checkbox" name="idContrato" checked hidden value="{{id}}">{{id}}
+                        </h3>
+                        <h3> <b>Nome do Cliente:</b> {{dataValues.Cliente.p_nome}} {{dataValues.Cliente.sobre_nome}}
+                        </h3>
+                        <h3> <b>Motivo do chamado:</b> {{problema}}</h3>
+                        <textarea id="msg" name="solucao" placeholder="Digite aqui a solução"></textarea>
+                        <button type="submit" class="enviar">Enviar <i class="fa fa-arrow-right"></i></button><br>
+                        <a> <b>Status:</b> {{dataValues.status}}</a>
+                    </div>
+                    </form>
+                    {{/each}}
+            </div>
+            <br><br><br> <br><br> <form action="/menuAdmin" method="post"><button class="leave">Voltar para menu</button></form>
+        </div>
+
+    </body>
+</body>
+
+</html>

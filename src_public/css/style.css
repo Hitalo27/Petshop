@@ -1,9 +1,23 @@
 /* Seletores: Universal = *, id = #, Class = . */ 
 /* id nao pode ser duplicado*/
 
+
+:root {
+    --primary_color: rgb( 94, 41, 19);
+    --second_color: #000;
+    --third_color: #fff;
+    --font: 'Montserrat', sans-serif;
+    --font_title: 600;
+    --font_subtitle: 400;
+    --font-_parag: 300;
+}
+
+
 *{
     font-size: 25px;
 }
+
+
 
 p{
     margin: 2em auto;
@@ -70,6 +84,30 @@ nav ul li{
 
 }
 
+.join {
+    background: rgb( 94, 41, 19);
+    color: white;
+    border: 1px solid #000000;
+    font-size: 16px;
+    padding: 1%;
+    border-radius: 15px;
+    height: 45px;
+    width:  150px;
+}
+
+
+.leave {
+    background: rgb( 94, 41, 19);
+    color: white;
+    border: 1px solid #fafafa;
+    font-size: 16px;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    height: 45px;
+    width:  150px;
+    
+}
+
 #bloco li{
     background: rgb(49, 12, 12);
     border: 1px solid rgb(44, 9, 9);
@@ -119,6 +157,41 @@ li  a:visited{
     }
 
   
+    .container-interno {
+        padding: 0% 15%;
+        margin: auto 0%;
+        display: inline;
+    }
+
+    .container-interno1 {
+        padding: 1% 10%;
+        margin: auto 15%;
+    }
+
+    .processos {
+        padding: 0% 1% 0% 1%;
+    }
+
+    .blocks-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .primary-button {
+        background: var(--primary_color);
+        color: var(--third_color);
+        border: 1px solid var(--primary_color);
+        width: 100%;
+        border-radius: 20px;
+        padding: 3% 3%;
+        font-size: 16px;
+        margin: 0% 0% 3% 0%;
+        transition: 0.5s;
+    }
+    
+    
+
 
 .container{
     min-height: 500px;

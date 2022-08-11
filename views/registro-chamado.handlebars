@@ -1,0 +1,57 @@
+<!--Tela de Login-->
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Cuidar Pet Shop</title>
+</head>
+
+<body>
+
+    <div class="container avaliar blocks-2">
+
+        <div class="container-interno">
+            <img src="img/logo/Versão Vertical.png" alt="" style="max-width:100%;">
+            <h2><b>Precisa de ajuda?</b></h2>
+            <p>Preencha o formulário ao lado!</p>
+            <form action="/menuCliente" method="post"><button class="leave">Voltar para o menu inicial</button></form>
+
+        </div>
+
+        <div class="container-interno1">
+
+         <h2>Prezado {{dados.dataValues.p_nome}} {{dados.dataValues.sobre_nome}} </h2>
+
+            <form action="/addChamado" method="post">
+                
+                <input type="text" name="cpf" placeholder=" CPF: {{dados.dataValues.CPF}}" disabled required>
+
+                <select name="tipo-de-problema">
+                    <option>Problema relacionado ao pet</option>
+                    <option>Recuperação de conta</option>
+                    <option>Problema na plataforma</option>
+                    <option>Outros problemas</option>
+                  </select>
+
+                <textarea name="problem" placeholder="Observações"></textarea>
+                
+
+                    <button type="submit" class="join">Enviar <i class="fa fa-arrow-right"></i></button>
+                
+                
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

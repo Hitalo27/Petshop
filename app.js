@@ -4,6 +4,7 @@ const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser')
 const User = require("./models/Cadastro_Cliente");
 const Pet = require("./models/Cadastro_Pet");
+const CadastrarChamado = require("./models/CadastrarChamado")
 var hbs = handlebars.create({
     /* configuração */
   });
@@ -58,7 +59,7 @@ app.post("/loginHome", function (req, res) {
           break;
 
       case "Admin":
-          CadastrarCliente.findOne({ where: { cpf: req.body.dadosEntrada } }).then(function (dados) {
+          User.findOne({ where: { cpf: req.body.dadosEntrada } }).then(function (dados) {
               if (dados == null) {
                   res.send("não foi possível fazer login")
 
@@ -81,10 +82,16 @@ app.post("/loginHome", function (req, res) {
       res.sendFile('index.html', {root: __dirname});
   });
 
+
  
    //Rota cliente logado
    app.post("/menuCliente", function (req, res) {
     res.render("menu-cliente", { dados: usuarioLogado })
+})
+
+//Rota Admin logado
+app.post("/menuAdmin", function (req, res) {
+    res.render("menu-adm", { dados: usuarioLogado })
 })
 
 
@@ -100,10 +107,11 @@ app.post("/meus-pets", function (req, res) {
     })
 })
 
-      /*app.post("/meus-pets", function (req, res) {
-        res.render("meus-pets", { dados: usuarioLogado });
-      });
-*/
+   //Rota cliente logado
+   app.post("/detalhes", function (req, res) {
+    res.render("detalhes", { pets: petsCliente})
+})
+
 
 // Rota para SELECT * na tabela de paceiros cadastrados
 app.post("/contratar-servico", function (req, res) {
@@ -146,11 +154,71 @@ app.post("/contratar-servico", function (req, res) {
         })
       });
 
+      //Rota para Chamado
+app.post("/registrar-chamado", function (req, res) {
+    res.render("registro-chamado", { dados: usuarioLogado })
+    console.log(usuarioLogado)
+})
+
+//Rota para tabela de chamados no banco de dados
+app.post("/addChamado", function (req, res) {
+    var newDate = new Date();
+    CadastrarChamado.create({
+        problema: req.body.problem,
+        dataAbertura: newDate,
+        cliente_id_fk: usuarioLogado.id
+    }).then(function () {
+        res.redirect(307, "meus-chamados")
+    })
+})
+
+//Rota para SELECT dos chamados do usuário
+app.post("/meus-chamados", function (req, res) {
+    CadastrarChamado.findAll({ where: { cliente_id_fk: usuarioLogado.id } }).then(function (chamados) {
+        res.render("meus-chamados", { chamados: chamados, usuario: usuarioLogado },)
+        console.log(usuarioLogado)
+        console.log(chamados)
+    })
+})
+
+//Rota para SELECT dos chamados do usuário no admin
+app.post("/registro-solucao", function (req, res) {
+    CadastrarChamado.findAll({
+        where: { status: "aberto" },
+        include: [{
+            model: User,
+            require: true,
+            attributes: ["p_nome", "sobre_nome"]
+        }]
+
+    }).then(function (chamados) {
+        res.render("registro-solucao", { chamados: chamados, status: "aberto" },)
+        console.log(chamados)
+
+    })
+})
+
+//Rota para UPDATE do Chamado
+app.post("/atualizarChamado", function (req, res) {
+    CadastrarChamado.update(
+        { status: "Fechado" },
+        { where: { id: req.body.idContrato } }
+    ).then(function () {
+        res.redirect(307, "/registro-solucao")
+    })
+        .catch(err =>
+            handleError(err)
+        )
+})
+
+
       //Rota apra Logout
 app.post("/logOut", function (req, res) {
     usuarioLogado = ""
     res.redirect("/")
 })
+
+
 
 
 app.listen(port, function(){

@@ -1,0 +1,5 @@
+INSERT INTO `clientes` (`id`,`CPF`,`p_nome`,`sobre_nome`,`email`,`telefone`,`senha`,`isAdmin`,`createdAt`,`updatedAt`)
+VALUES
+(1,0000000000,"Admin","Admin","admin@hotmail.edu","(481) 356-9902",1234,"1","2022-05-14 03:50:49","2022-05-14 03:50:49"),
+(2,1111111111,"Hitalo","Silveira","fv@hotmail.edu","(481) 356-9902",1234,"1","2022-06-14 03:50:49","2022-06-14 03:50:49"),
+(3,2222222222,"Ludmyla","Porto","Ludmyla@hotmail.edu","(481) 356-9902",1234,"1","2022-06-14 03:50:49","2022-06-14 03:50:49");

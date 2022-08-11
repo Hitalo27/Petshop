@@ -1,4 +1,4 @@
-<!--Tela de Eventos-->
+<!--Tela de Chamados-->
 <html lang="pt-br">
 
 <head>
@@ -12,32 +12,23 @@
     <title>Cuidar Pet Shop</title>
 </head>
 
-<body>
-
-<div id="bloco">
-
-    <img class="icon" src="image/imagem.jpg">
-
-    <h2>Cuidar Pet Shop</h2>
-
-  </div>
+<body class="chamados">
 
     <div class="container">
-        <h2>Pets cadastrados por: {{dados.dataValues.p_nome}} {{dados.dataValues.sobre_nome}} </h2>
-
-        <h4>Selecione o serviço para o pet que você deseja</h4>
+        <h2>Chamados registrados por:  {{usuario.dataValues.p_nome}} {{usuario.dataValues.sobre_nome}}</h2>
         <div class="boxEventosCadastrdos" style="overflow-y: scroll; max-height: 400px;">
-            {{#each pets}}
-          
-                <h3> <b>Nome do pet: </b> {{dataValues.nome}}</h3>
-               <form action="/detalhes" method="post"><button> + Detalhes</button></form>
-                <form action="/contratar-servico" method="post"><button>Banho e tosa</button></form>
-
-            
+            {{#each chamados}}
+            <form action="#" method="post">
+            <div class="divEventosCadastrados">
+                <h3> <b>Motivo do chamado: </b> {{dataValues.problema}}</h3>
+                <button disabled> + Detalhes</button>
+                <button disabled>Deletar</button>
+            </div>
+             </form>
              {{/each}}
+             <form action="/menuCliente" method="post"><button class="leave" type="submit">Voltar para menu</button></form>
         </div>
-        <br>
-        <form action="/menuCliente" method="post"><button class="leave">Voltar para menu</button></form>
+      
     </div>
 
 

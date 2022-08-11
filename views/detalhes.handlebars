@@ -23,20 +23,22 @@
   </div>
 
     <div class="container">
-        <h2>Pets cadastrados por: {{dados.dataValues.p_nome}} {{dados.dataValues.sobre_nome}} </h2>
-
-        <h4>Selecione o serviço para o pet que você deseja</h4>
-        <div class="boxEventosCadastrdos" style="overflow-y: scroll; max-height: 400px;">
+        <div>
             {{#each pets}}
-          
-                <h3> <b>Nome do pet: </b> {{dataValues.nome}}</h3>
-               <form action="/detalhes" method="post"><button> + Detalhes</button></form>
-                <form action="/contratar-servico" method="post"><button>Banho e tosa</button></form>
+        
+            <h2>Detalhes do(a) {{dataValues.nome}}</h2>
 
+                <h3> Raça: {{dataValues.raça}}</h3>
+                <h3> Idade: {{dataValues.idade}} ano(s)</h3>
+                <h3> Peso: {{dataValues.peso}} kg's</h3>
+        <br>
+        <br>
             
              {{/each}}
         </div>
+    
         <br>
+        
         <form action="/menuCliente" method="post"><button class="leave">Voltar para menu</button></form>
     </div>
 

@@ -26,6 +26,11 @@ const User = db.sequelize.define('usuarios',{
         type: db.Sequelize.STRING(45),
         allowNull: false,
     },
+    isAdmin: {
+        type: db.Sequelize.BOOLEAN,
+        defaultValue: false,
+    }
+    
 })
 
 User.sync()

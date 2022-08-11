@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
-    <title>Alfred - Encontre o seu evento</title>
+    <title>Cuidar PetShop</title>
 </head>
 
 <body class="eventos">
@@ -25,21 +25,23 @@
                     {{/each}}
                 </select>
             </div>
-
-            <div class="container-interno eventos-blocos blocks-2" style="overflow-y: scroll; max-height: 400px;">
-  
-    
-                    <p>Serviço: <button value="1,00">Banho</button> , <button>tosa</button> , <button>banho e tosa</button></p>
-                    <p> R${{dataValues.Servico.preco}} por {{dataValues.Servico.unidade_medida}}</p>
+                <div class="container-interno select-evento">
+                    <p>Serviço: <button onclick="preço(this.value)" value="50,00">Banho</button> 
+                     <button onclick="preço(this.value)" value="50,00">tosa</button> 
+                      <button onclick="preço(this.value)" value="90,00">banho e tosa</button></p>
                     <input type="checkbox" name="parceiro"  value="{{dataValues.id}}" checked hidden>
-                    <button class="join1">Contratar <i class="fa fa-arrow-right"></i></button>
+             
                 
    
-    </div>
+  
     <form action="/menuCliente" method="post"><button class="leave">Voltar para o menu inicial</button></form>
     </div>
 
-
+<script>
+    function preço(letra) {
+   document.(letra);
+    }
+</script>
 
 
 </body>

@@ -1,0 +1,47 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Cuidar Pet Shop</title>
+</head>
+
+<body class="eventos">
+
+    <div class="container">
+
+        <div class="container-interno">
+
+            <h2><b>Menu de Admin</b></h2>
+            <div class="boasVindas">
+                <h2>Bem-vindo: {{dados.dataValues.p_nome}} {{dados.dataValues.sobre_nome}} </h2>
+            </div>
+            <p></p>
+            
+            <div class="blocks-2">
+
+                <div class="processos">
+                    <form action="/registro-solucao" method="post"><button type="submit" class="primary-button"><i
+                                class="fa fa-user"></i> Chamados</button></form>
+                </div>
+                
+            
+            </div>
+              <form action="/logOut" method="post"><button class="leave">Sair</button></form>
+    </div>
+
+
+
+</body>
+<script>
+
+
+
+</script>
+
+</html>
